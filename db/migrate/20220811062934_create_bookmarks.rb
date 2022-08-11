@@ -8,4 +8,24 @@ class CreateBookmarks < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+  class User < ActiveRecord::Base
+    belongs_to :company
+    has_and_belongs_to_many :roles
+  end
+
+  class Company < ActiveRecord::Base
+    has_many :users
+  end
+
+  class Role < ActiveRecord::Base
+    has_and_belongs_to_many :users
+  end
+  Now we have the user form:
+
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :name %>
+    <%= f.association :company %>
+    <%= f.association :roles %>
+    <%= f.button :submit %>
+  <% end %>
 end
