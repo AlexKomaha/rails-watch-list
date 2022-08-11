@@ -20,7 +20,6 @@ class CreateBookmarks < ActiveRecord::Migration[7.0]
   class Role < ActiveRecord::Base
     has_and_belongs_to_many :users
   end
-  Now we have the user form:
 
   <%= simple_form_for @user do |f| %>
     <%= f.input :name %>
