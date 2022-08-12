@@ -21,10 +21,10 @@ class CreateBookmarks < ActiveRecord::Migration[7.0]
     has_and_belongs_to_many :users
   end
 
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :name %>
-    <%= f.association :company %>
-    <%= f.association :roles %>
-    <%= f.button :submit %>
-  <% end %>
+  # <%= simple_form_for @user do |f| %>
+  #   <%= f.input :name %>
+  #   <%= f.association :company %>
+  #   <%= f.association :roles %>
+  #   <%= f.button :submit %>
+  # <% end %>
 end
