@@ -7,3 +7,7 @@ file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-C
 article = Article.new(title: "NES", body: "A great console")
 article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 article.save
+
+
+@article.photo.attached? #=> true/false
+@article.photo.purge #=> Destroy the photo
